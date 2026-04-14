@@ -1,0 +1,14 @@
+{
+  "roots": [
+    "cli_student_grader"
+  ],
+  "packages": [
+    {
+      "name": "cli_student_grader",
+      "version": "1.0.0",
+      "dependencies": [],
+      "devDependencies": []
+    }
+  ],
+  "configVersion": 1
+}
