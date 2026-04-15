@@ -99,3 +99,59 @@ void recordScore(
 
   print("Score added.");
 }
+
+// ---------------- OPTION 3 ----------------
+void addBonus(List<Map<String, dynamic>> students) {
+  if (students.isEmpty) return;
+
+  for (int i = 0; i < students.length; i++) {
+    print("$i. ${students[i]["name"]}");
+  }
+
+  print("Select student:");
+  var index = int.parse(stdin.readLineSync()!);
+
+  if (index < 0 || index >= students.length) {
+    print("Invalid index.");
+    return;
+  }
+
+  var student = students[index];
+
+  print("Enter bonus (1-10):");
+  var bonusValue = int.parse(stdin.readLineSync()!);
+
+  // REQUIRED: ??= usage
+  student["bonus"] ??= bonusValue;
+
+  if (student["bonus"] == bonusValue) {
+    print("Bonus added.");
+  } else {
+    print("Bonus already exists.");
+  }
+}
+
+// ---------------- OPTION 4 ----------------
+void addComment(List<Map<String, dynamic>> students) {
+  if (students.isEmpty) return;
+
+  for (int i = 0; i < students.length; i++) {
+    print("$i. ${students[i]["name"]}");
+  }
+
+  print("Select student:");
+  var index = int.parse(stdin.readLineSync()!);
+
+  if (index < 0 || index >= students.length) {
+    print("Invalid index.");
+    return;
+  }
+
+  var student = students[index];
+
+  print("Enter comment:");
+  var comment = stdin.readLineSync();
+
+  student["comment"] = comment;
+}
+
